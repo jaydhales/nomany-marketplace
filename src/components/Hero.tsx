@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="lg:rounded bg-white lg:p-5 flex gap-4">
-      <div className="tab hidden lg:grid w-52 ">
+    <section className="lg:rounded bg-white md:p-5 grid md:grid-cols-9 lg:grid-cols-12 gap-4">
+      <div className="tab md:col-span-2 lg:col-span-3 hidden md:grid ">
         {[
           "Automobiles",
           "Clothes and wear",
@@ -21,24 +21,20 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="hero-main group relative flex-1 overflow-hidden min-h-[360px]">
+      <div className="hero-main md:col-span-5 lg:col-span-7 min-h-[200px] md:min-h-[320px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assets/hero-banner.png"
-          alt="banner"
-          className="absolute h-full w-full object-cover "
-        />
+        <img src="/assets/hero-banner.png" alt="banner" className="" />
 
-        <div className="content relative z-20 p-11">
-          <p className="text-3xl">Latest Trending</p>
-          <p className="text-3xl font-bold">Electronic items</p>
+        <div className="content p-5 md:p-11">
+          <p className="text-xl md:text-3xl">Latest Trending</p>
+          <p className="text-xl md:text-3xl font-bold">Electronic items</p>
           <button className="btn bg-white mt-4 ">
-            <p className="px-2">Learn More</p>{" "}
+            <p className="md:px-2 text-[13px] md:text-base">Learn More</p>
           </button>
         </div>
       </div>
 
-      <div className="cta hidden lg:flex flex-col gap-2.5 w-52">
+      <div className="cta hidden md:col-span-2 md:flex flex-col gap-2.5">
         <div className="btn bg-[#E3F0FF] h-full grid gap-2">
           <div className="flex gap-2 5 items-center">
             <Image

@@ -2,23 +2,48 @@ import DealProductCard from "@/components/DealProductCard";
 
 const Deals = () => {
   return (
-    <section className="flex flex-col lg:flex-row gap-0.5 my-2.5 lg:mt-8 lg:mb-5">
-      <div className="head bg-white p-5 min-w-[280px] flex justify-between items-center lg:block">
+    <section className="caliph">
+      <div className="head bg-white">
         <div>
-          <h2 className="font-semibold text-xl">Deals and offers</h2>
+          <h2>Deals and offers</h2>
           <p>Electronic equipments</p>
         </div>
         <div className="timer">
           <code>Timer Here</code>
         </div>
       </div>
-      <main className="flex gap-0.5 overflow-x-scroll">
-        <DealProductCard src="/assets/dummy.png" name="iWatch" discount={-10} />
-        <DealProductCard src="/assets/dummy.png" name="iWatch" discount={-10} />
-        <DealProductCard src="/assets/dummy.png" name="iWatch" discount={-10} />
-        <DealProductCard src="/assets/dummy.png" name="iWatch" discount={-10} />
-        <DealProductCard src="/assets/dummy.png" name="iWatch" discount={-10} />
-        <DealProductCard src="/assets/dummy.png" name="iWatch" discount={-10} />
+
+      <main className="grid grid-flow-col gap-0.5 overflow-x-scroll hide-scroll">
+        <DealProductCard
+          src="/assets/dummy.png"
+          name="Smart watches"
+          discount={-10}
+        />
+        <DealProductCard
+          src="/assets/dummy.png"
+          name="Laptops"
+          discount={-10}
+        />
+        <DealProductCard
+          src="/assets/dummy.png"
+          name="GoPro cameras"
+          discount={-10}
+        />
+        <DealProductCard
+          src="/assets/dummy.png"
+          name="Headphones"
+          discount={-10}
+        />
+        <DealProductCard
+          src="/assets/dummy.png"
+          name="Canon camreras"
+          discount={-10}
+        />
+        <DealProductCard
+          src="/assets/dummy.png"
+          name="Canon camreras"
+          discount={-10}
+        />
       </main>
     </section>
   );

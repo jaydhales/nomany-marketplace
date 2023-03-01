@@ -12,13 +12,54 @@
   .screen {
     @apply max-w-[1400px] mx-auto;
   }
+
   .btn {
-    @apply rounded-md p-2.5;
+    @apply rounded-md py-1.5 px-2.5;
   }
   button.btn {
-    @apply p-2.5 !important;
+    @apply py-1.5 px-2.5 !important;
   }
   .cta-card {
-    @apply text-white p-4 pr-16;
+    @apply text-white p-4 pr-8;
   }
+
+  .hero-main {
+    @apply relative overflow-hidden;
+
+    img {
+      @apply absolute inset-0 w-full object-cover;
+      @apply h-full  !important;
+    }
+
+    .content {
+      @apply relative z-20;
+    }
+  }
+
+  .caliph {
+    @apply grid md:grid-cols-9 lg:grid-cols-12 gap-0.5 my-2.5 lg:mt-8 lg:mb-5;
+
+    .head {
+      @apply p-5 md:col-span-2 lg:col-span-3 flex justify-between items-center md:block;
+
+      h2 {
+        @apply font-semibold text-xl !important;
+      }
+    }
+
+    main {
+      @apply md:col-span-7 lg:col-span-9;
+    }
+  }
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.quote {
+  background-image: url("/assets/quote-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
