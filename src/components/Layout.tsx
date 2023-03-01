@@ -8,7 +8,7 @@ const Layout: FC<any> = ({ children }) => {
     <div className=" min-h-screen">
       <Header />
       <CategoryNav />
-      <div className="p-5 min-h-[calc(100vh-460px)] screen">{children}</div>
+      <div className="lg:p-5 min-h-[calc(100vh-460px)] screen">{children}</div>
 
       <Footer />
     </div>

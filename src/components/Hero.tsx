@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="rounded bg-white p-5 flex gap-4">
-      <div className="tab grid w-52">
+    <section className="lg:rounded bg-white lg:p-5 flex gap-4">
+      <div className="tab hidden lg:grid w-52 ">
         {[
           "Automobiles",
           "Clothes and wear",
@@ -21,7 +21,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="hero-main group relative flex-1 overflow-hidden rounded">
+      <div className="hero-main group relative flex-1 overflow-hidden min-h-[360px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/assets/hero-banner.png"
@@ -38,7 +38,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="cta flex flex-col gap-2.5 w-52">
+      <div className="cta hidden lg:flex flex-col gap-2.5 w-52">
         <div className="btn bg-[#E3F0FF] h-full grid gap-2">
           <div className="flex gap-2 5 items-center">
             <Image
