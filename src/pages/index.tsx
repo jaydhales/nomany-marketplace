@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Deals from "@/components/Deals";
 import CategoryHero from "@/components/CategoryHero";
 import Quote from "@/components/Quote";
+import Recommended from "@/components/Recommended";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function Home() {
           imgSrc="image 98"
         />
         <Quote />
+        <Recommended />
       </main>
     </>
   );

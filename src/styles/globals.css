@@ -41,10 +41,9 @@
 
     .head {
       @apply p-5 md:col-span-2 lg:col-span-3 flex justify-between items-center md:block;
-
-      h2 {
-        @apply font-semibold text-xl !important;
-      }
+    }
+    h2 {
+      @apply font-semibold text-xl !important;
     }
 
     main {
