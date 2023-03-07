@@ -5,10 +5,10 @@ import { FC } from "react";
 
 const Layout: FC<any> = ({ children }) => {
   return (
-    <div className=" min-h-screen">
+    <div className="min-h-screen">
       <Header />
       <CategoryNav />
-      <div className="lg:p-5 min-h-[calc(100vh-460px)] screen">{children}</div>
+      <div className="min-h-[calc(100vh-460px)]">{children}</div>
 
       <Footer />
     </div>

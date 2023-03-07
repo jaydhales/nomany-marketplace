@@ -10,7 +10,7 @@
 
 @layer component {
   .screen {
-    @apply max-w-[1400px] mx-auto;
+    @apply max-w-[1400px] 2xl:max-w-[1500px] mx-auto lg:p-5;
   }
 
   .btn {

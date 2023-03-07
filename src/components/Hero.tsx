@@ -3,7 +3,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className="lg:rounded bg-white md:p-5 grid md:grid-cols-9 lg:grid-cols-12 gap-4">
-      <div className="tab md:col-span-2 lg:col-span-3 hidden md:grid ">
+      <div className="tab md:col-span-2 lg:col-span-3 hidden md:grid">
         {[
           "Automobiles",
           "Clothes and wear",

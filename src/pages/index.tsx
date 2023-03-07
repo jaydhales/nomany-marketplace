@@ -1,12 +1,10 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Hero from "@/components/Hero";
 import Deals from "@/components/Deals";
 import CategoryHero from "@/components/CategoryHero";
 import Quote from "@/components/Quote";
 import Recommended from "@/components/Recommended";
-
-const inter = Inter({ subsets: ["latin"] });
+import CTA from "@/components/CTA";
 
 export default function Home() {
   return (
@@ -17,7 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="screen">
         <Hero />
         <Deals />
         <CategoryHero title="Home and outdoor" imgSrc="image 92" />
@@ -28,6 +26,7 @@ export default function Home() {
         <Quote />
         <Recommended />
       </main>
+      <CTA />
     </>
   );
 }

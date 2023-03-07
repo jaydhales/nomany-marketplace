@@ -6,7 +6,7 @@ import { FC } from "react";
 const Header = () => {
   return (
     <div className="bg-white">
-      <header className="flex items-center justify-between p-5  screen">
+      <header className="flex items-center justify-between px-5 py-2  screen">
         <Link href="/">
           <Image src="/assets/logo.png" alt="Logo" width="173" height="54" />
         </Link>
