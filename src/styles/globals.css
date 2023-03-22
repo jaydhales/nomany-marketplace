@@ -6,6 +6,31 @@
   :root {
     @apply bg-gray-100;
   }
+  h1 {
+    @apply text-title-h1 font-title-h1;
+  }
+  h2 {
+    @apply text-title-h2 font-title-h2;
+  }
+  h3 {
+    @apply text-title-h3 font-title-h3;
+  }
+  h4 {
+    @apply text-title-h4 font-title-h4;
+  }
+  h5 {
+    @apply text-title-h5 font-title-h5;
+  }
+  h6 {
+    @apply text-title-h6 font-title-h6;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    @apply bg-none border-none outline-none;
+  }
 }
 
 @layer component {
@@ -42,12 +67,44 @@
     .head {
       @apply p-5 md:col-span-2 lg:col-span-3 flex justify-between items-center md:block;
     }
-    h2 {
-      @apply font-semibold text-xl !important;
+
+    .content {
+      @apply w-2/3;
     }
 
     main {
       @apply md:col-span-7 lg:col-span-9;
+    }
+  }
+
+  .range-slider {
+    @apply px-4;
+    .double-range-slider-container {
+      @apply relative w-full;
+    }
+
+    .double-range-slider-rail {
+      @apply bg-gray-300 w-full h-2 absolute top-[25px] rounded-full;
+    }
+
+    .double-range-slider-track {
+      @apply bg-blue h-2 absolute top-[25px] w-full rounded-full;
+    }
+
+    .double-range-slider-ball {
+      @apply bg-blue w-5 h-5 rounded-full cursor-pointer absolute top-5;
+
+      p {
+        @apply absolute top-5;
+      }
+    }
+
+    .double-range-slider-active {
+      @apply z-10;
+    }
+
+    .double-range-slider-max p {
+      @apply right-0;
     }
   }
 }
