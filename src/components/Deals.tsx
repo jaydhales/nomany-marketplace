@@ -5,7 +5,7 @@ const Deals = () => {
     <section className="caliph">
       <div className="head bg-white">
         <div>
-          <h2>Deals and offers</h2>
+          <h4>Deals and offers</h4>
           <p>Electronic equipments</p>
         </div>
         <div className="timer">

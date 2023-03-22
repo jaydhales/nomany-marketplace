@@ -35,7 +35,7 @@ interface Nav {
 export const NavLink: FC<Nav> = ({ path, title }) => (
   <Link
     href={path}
-    className="flex flex-col justify-between text-center text-xs text-gray-500"
+    className="flex flex-col justify-between text-center text-small text-gray-500"
   >
     <Image
       src={`/assets/icons/${path}.png`}

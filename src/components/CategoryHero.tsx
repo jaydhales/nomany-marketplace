@@ -13,7 +13,7 @@ const CategoryHero: FC<Category> = ({ title, imgSrc }) => {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={`/assets/${imgSrc}.png`} alt="banner" />
         <div className="content">
-          <h2>{title}</h2>
+          <h4>{title}</h4>
           <a href="#" className="btn bg-white mt-4 block px-4 w-max">
             Source now
           </a>

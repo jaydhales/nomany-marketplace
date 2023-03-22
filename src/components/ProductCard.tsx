@@ -12,8 +12,8 @@ const ProductCard: FC<CardProps> = ({ src, price, description }) => {
     <div className="bg-white w-60 p-4 flex flex-col gap-3.5 items-center rounded-md">
       <Image src={src} width={200} height={200} alt={description} />
       <div>
-        <small>₦{price}</small>
-        <p>{description}</p>
+        <p className="font-title">₦{price}</p>
+        <p className="text-gray-500">{description}</p>
       </div>
     </div>
   );

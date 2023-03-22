@@ -17,7 +17,7 @@ const Footer = () => {
               />
             </Link>
 
-            <p>A marketplace for everyone.</p>
+            <p className="text-gray-600">A marketplace for everyone.</p>
           </div>
 
           {[
@@ -29,13 +29,17 @@ const Footer = () => {
             ["For users", ["Login", "Register", "Settings", "My Orders"]],
           ].map(([head, links]) => (
             <div key={head.toString()}>
-              <h4 className="font-bold mb-2.5">{head}</h4>
-              <nav className="grid gap-0">
+              <p className="font-title mb-2.5">{head}</p>
+              <nav className="grid gap-0 text-gray-500">
                 {links
                   .toString()
                   .split(",")
                   .map((link) => (
-                    <Link href={link} key={link}>
+                    <Link
+                      href={link}
+                      key={link}
+                      className="hover:text-gray-600"
+                    >
                       {link}
                     </Link>
                   ))}
@@ -45,8 +49,8 @@ const Footer = () => {
         </main>
       </div>
 
-      <div className="bg-gray-200">
-        <div className="p-5 flex justify-between screen">
+      <div className="bg-gray-300">
+        <div className="p-5 flex justify-between screen text-gray-600">
           <p>&copy; 2023 Nomany. </p>
           <p>English</p>
         </div>

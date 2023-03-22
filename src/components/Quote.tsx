@@ -2,10 +2,8 @@ const Quote = () => {
   return (
     <div className="quote p-5 pb-10 md:p-10 md:pb-14 lg:rounded flex justify-between md:gap-16">
       <div className="text-white max-w-[440px]">
-        <p className="text-2xl md:text-3xl font-bold mb-4">
-          An easy way to send requests to all suppliers
-        </p>
-        <p className="hidden md:block">
+        <h2>An easy way to send requests to all suppliers</h2>
+        <p className="hidden md:block text-info font-info">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt.
         </p>
@@ -19,27 +17,27 @@ const Quote = () => {
 
       <form
         action=""
-        className="hidden md:grid gap-4 rounded-md bg-white p-5 w-[500px]"
+        className="hidden md:grid gap-4 rounded-md shadow-md bg-white p-5 w-[500px]"
       >
-        <h3 className="text-xl font-semibold">Send quote to suppliers</h3>
+        <h4>Send quote to suppliers</h4>
         <input
           type="text"
-          className="border p-2.5 rounded-md"
+          className="p-2.5 rounded-md shadow-input"
           placeholder="What item you need?"
         />
         <textarea
           name=""
-          className="border p-2.5 rounded-md"
+          className="p-2.5 rounded-md shadow-input"
           placeholder="Type more details"
         />
-        <div className="flex gap-4">
+        <div className="flex gap-4 ">
           <input
             type="number"
-            className="border p-2.5 rounded-md"
+            className="p-2.5 rounded-md shadow-input"
             placeholder="Quantity"
           />
-          <i className="border p-2.5 rounded-md">
-            <select name="type" id="" className="bg-transparent w-20">
+          <i className="p-2.5 rounded-md shadow-input">
+            <select name="type" id="" className="w-20">
               {" "}
               <option value="pcs">Pcs</option>
               <option value="kg">kg</option>
@@ -47,7 +45,7 @@ const Quote = () => {
             </select>
           </i>
         </div>
-        <a href="#" className="btn bg-[#0067FF] w-max text-white px-4">
+        <a href="#" className="btn bg-blue w-max text-white px-4">
           Send inquiry
         </a>
       </form>

@@ -1,23 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
     <section className="lg:rounded bg-white md:p-5 grid md:grid-cols-9 lg:grid-cols-12 gap-4">
       <div className="tab md:col-span-2 lg:col-span-3 hidden md:grid">
         {[
-          "Automobiles",
-          "Clothes and wear",
-          "Home interiors",
-          "Computer and tech",
-          "Tools, equipments",
-          "Sports and outdoor",
-          "Animal and pets",
-          "Machinery tools",
-          "More category",
-        ].map((tab, i) => (
-          <a href="#" key={i} className="active:bg-[#E5F1FF] btn">
+          ["Clothes and wear", "/clothing"],
+          ["Automobiles", ""],
+          ["Home interiors", ""],
+          ["Computer and tech", ""],
+          ["Tools, equipments", ""],
+          ["Sports and outdoor", ""],
+          ["Animal and pets", ""],
+          ["Machinery tools", ""],
+          ["More category", ""],
+        ].map(([tab, path], i) => (
+          <Link href={path} key={i} className="active:bg-light-blue btn">
             {tab}
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -29,13 +30,13 @@ const Hero = () => {
           <p className="text-xl md:text-3xl">Latest Trending</p>
           <p className="text-xl md:text-3xl font-bold">Electronic items</p>
           <button className="btn bg-white mt-4 ">
-            <p className="md:px-2 text-[13px] md:text-base">Learn More</p>
+            <p className="md:px-2 text-small md:text-base">Learn More</p>
           </button>
         </div>
       </div>
 
       <div className="cta hidden md:col-span-2 md:flex flex-col gap-2.5">
-        <div className="btn bg-[#E3F0FF] h-full grid gap-2">
+        <div className="btn bg-light-blue h-full grid gap-2">
           <div className="flex gap-2 5 items-center">
             <Image
               src="/assets/icons/Avatar.png"
@@ -54,10 +55,10 @@ const Hero = () => {
             Log in
           </button>
         </div>
-        <div className="btn bg-[#F38332] cta-card">
+        <div className="btn bg-orange cta-card">
           <p>Get US $10 off with a new supplier</p>
         </div>
-        <div className="btn bg-[#55BDC3] cta-card">
+        <div className="btn bg-light-green cta-card">
           <p>Send quotes with supplier preferences</p>
         </div>
       </div>
