@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import { RxCaretDown } from "react-icons/rx";
 import { RangeSlider } from "react-double-range-slider";
 import Link from "next/link";
-import { Filter } from "../pages/clothing";
+import { Filter } from "@/Interface";
 
 type sliderData = {
   min: number | string;
@@ -16,8 +16,8 @@ const SidebarFilter: FC<Filter> = ({ type, options, as }) => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
 
   return (
-    <div className="border-t border-gray-200 w-[300px]">
-      <div className="head flex justify-between items-center mt-2 mb-6">
+    <div className="border-t border-gray-300 w-[240px]">
+      <div className="head flex justify-between items-center mt-2">
         <h6>{type}</h6>
         <button onClick={(e) => setIsOpened(!isOpened)}>
           <RxCaretDown
@@ -30,7 +30,7 @@ const SidebarFilter: FC<Filter> = ({ type, options, as }) => {
         </button>
       </div>
       {isOpened && (
-        <div className="content grid gap-4">
+        <div className="content grid gap-4  mt-6">
           {as === "range" ? (
             <div className="range-slider">
               <RangeSlider
@@ -57,10 +57,10 @@ const SidebarFilter: FC<Filter> = ({ type, options, as }) => {
                     {option}
                   </Link>
                 ) : (
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3">
                     <input
                       type={as === "check" ? "checkbox" : "radio"}
-                      name={option.toString()}
+                      name={type}
                       id={option.toString()}
                     />
                     <label htmlFor={option.toString()}>{option}</label>

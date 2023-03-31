@@ -1,45 +1,25 @@
-import { Breadcrumbs } from "@/components/Utils";
+import { Breadcrumbs, toSentenceCase } from "@/components/Utils";
 import SidebarFilter from "@/components/SidebarFilter";
+import ViewCard from "@/components/ViewCard";
 // import "react-double-range-slider/dist/cjs/index.css";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { useContext, useEffect, useState } from "react";
 
-export interface Filter {
-  type: string;
-  as: "link" | "check" | "range" | "radio";
-  options: string[] | number[];
-}
+import { GlobalContext } from "@/contexts/GlobalContext";
 
 const Clothing = () => {
-  const filter: Filter[] = [
-    {
-      type: "Category",
-      as: "link",
-      options: ["Clothing", "Shoes", "Accessories"],
-    },
-    {
-      type: "Brands",
-      as: "check",
-      options: ["Adidas", "Nike", "Puma", "Reebok", "Vans"],
-    },
-    {
-      type: "Features",
-      as: "radio",
-      options: [
-        "Anti-Static",
-        "Breathable",
-        "Plus Size",
-        "Quick Dry",
-        "Waterproof",
-      ],
-    },
-    { type: "Price range", as: "range", options: [0, 500000] },
-    { type: "Condition", as: "check", options: ["New", "Used"] },
-    {
-      type: "Rating",
-      as: "check",
-      options: ["5", "4", "3", "2"],
-    },
-  ];
+  const [viewType, setViewType] = useState<"grid" | "list">("list");
+
+  const { filter, products, isDesktop, screenWidth } =
+    useContext(GlobalContext)!;
+
+  useEffect(() => {
+    !isDesktop && setViewType("list");
+  }, [screenWidth]);
+
+  const path = toSentenceCase(useRouter().pathname.slice(1));
 
   return (
     <>
@@ -47,14 +27,81 @@ const Clothing = () => {
         <title>Normany - Clothing</title>
       </Head>
       <div className="screen">
-        <Breadcrumbs styling="flex gap-2 text-gray-500 font-title mb-4" />
-        <main>
-          <div className="sidebar w-max grid gap-4">
+        {isDesktop && (
+          <Breadcrumbs styling="flex gap-3 text-gray-500 font-title mb-4 " />
+        )}
+        <main className="product-main">
+          <div className="sidebar w-max hidden md:grid gap-4 ">
             {filter.map(({ type, as, options }, i) => (
               <SidebarFilter key={i} type={type} as={as} options={options} />
             ))}
           </div>
-          <div className="content"></div>
+          <div className="content">
+            <div className="box py-3 flex justify-between items-center">
+              <p>
+                12,202 items in <b>{path}</b>
+              </p>
+              <div className="flex items-center gap-4">
+                <label htmlFor="verified">
+                  <input
+                    type="checkbox"
+                    name="verified"
+                    id="verified"
+                    className="mr-2"
+                  />
+                  Verified Only
+                </label>
+
+                <div className="type shadow-input hover:shadow-lg  rounded-sm p-2 min-w-[140px]">
+                  <select name="type" id="" className="w-full">
+                    <option value="Featured">Featured</option>
+                  </select>
+                </div>
+
+                {isDesktop && (
+                  <div className="flex">
+                    <button
+                      className={
+                        "shadow-input hover:shadow-lg rounded-l-sm p-2 " +
+                        (viewType === "grid" ? "bg-gray-200" : "")
+                      }
+                      onClick={(e) => setViewType("grid")}
+                    >
+                      <Image
+                        src="/assets/icons/gridview.png"
+                        alt="grid"
+                        width="20"
+                        height="20"
+                      />
+                    </button>
+
+                    <button
+                      className={
+                        "shadow-input hover:shadow-lg rounded-r-sm p-2 " +
+                        (viewType === "list" ? "bg-gray-200" : "")
+                      }
+                      onClick={(e) => setViewType("list")}
+                    >
+                      <Image
+                        src="/assets/icons/listview.png"
+                        alt="grid"
+                        width="20"
+                        height="20"
+                      />
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="view my-5 hide-scroll  p-3 md:p-0">
+              <div className={viewType === "grid" ? "grid-view" : "list-view"}>
+                {products.map((product, i) => (
+                  <ViewCard key={i} product={product} />
+                ))}
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </>
