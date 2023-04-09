@@ -6,15 +6,15 @@ const Hero = () => {
     <section className="lg:rounded bg-white md:p-5 grid md:grid-cols-9 lg:grid-cols-12 gap-4">
       <div className="tab md:col-span-2 lg:col-span-3 hidden md:grid">
         {[
-          ["Clothes and wear", "/clothing"],
-          ["Automobiles", ""],
-          ["Home interiors", ""],
-          ["Computer and tech", ""],
-          ["Tools, equipments", ""],
-          ["Sports and outdoor", ""],
-          ["Animal and pets", ""],
-          ["Machinery tools", ""],
-          ["More category", ""],
+          ["Clothes and wear", "/store/clothing"],
+          ["Automobiles", "/store/autos"],
+          ["Home interiors", "/store/interiors"],
+          ["Computer and tech", "/store/tech"],
+          ["Tools, equipments", "/store/tools"],
+          ["Sports and outdoor", "/store/sports"],
+          ["Animal and pets", "/store/pets"],
+          ["Machinery tools", "/store/machinery"],
+          ["More category", "/store/more"],
         ].map(([tab, path], i) => (
           <Link href={path} key={i} className="active:bg-light-blue btn">
             {tab}
@@ -24,7 +24,7 @@ const Hero = () => {
 
       <div className="hero-main md:col-span-5 lg:col-span-7 min-h-[200px] md:min-h-[320px]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/assets/hero-banner.png" alt="banner" className="" />
+        <img src="/assets/hero-banner.png" alt="banner" className="/store/" />
 
         <div className="content p-5 md:p-11">
           <p className="text-xl md:text-3xl">Latest Trending</p>

@@ -1,28 +1,37 @@
 import { Product } from "@/Interface";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import { Rating } from "react-simple-star-rating";
 
 interface ProductProps {
   product: Product;
+  parentPath: string;
 }
 
-const ViewCard: FC<ProductProps> = ({ product }) => {
+const ViewCard: FC<ProductProps> = ({ product, parentPath }) => {
+  const nextPath = `/store/${parentPath}/${product.product_name
+    .replaceAll(" ", "-")
+    .toLowerCase()}`;
+
   return (
     <div className="box">
-      <div className="image mx-auto rounded-lg">
+      <Link href={nextPath} className="image mx-auto rounded-lg">
         <Image
           src={product.image_url}
           width={200}
           height={200}
           alt={product.product_name}
         />
-      </div>
+      </Link>
 
       <div className="details">
-        <p className="text-title font-title md:h-12 flex items-end">
+        <Link
+          href={nextPath}
+          className="text-title font-title md:h-12 flex items-end"
+        >
           {product.product_name}
-        </p>
+        </Link>
         <div>
           <div className="price flex gap-3 items-center">
             <h4>${product.price.discounted || product.price.regular}</h4>

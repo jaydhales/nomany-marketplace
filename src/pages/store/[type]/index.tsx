@@ -9,22 +9,25 @@ import { useContext, useEffect, useState } from "react";
 
 import { GlobalContext } from "@/contexts/GlobalContext";
 
+// export const getStaticPaths = async () => {};
+
 const Clothing = () => {
   const [viewType, setViewType] = useState<"grid" | "list">("list");
+  const { query } = useRouter();
 
   const { filter, products, isDesktop, screenWidth } =
     useContext(GlobalContext)!;
 
   useEffect(() => {
     !isDesktop && setViewType("list");
-  }, [screenWidth]);
+  }, [isDesktop, screenWidth]);
 
-  const path = toSentenceCase(useRouter().pathname.slice(1));
+  const path = toSentenceCase(String(query.type));
 
   return (
     <>
       <Head>
-        <title>Normany - Clothing</title>
+        <title>Normany - {path}</title>
       </Head>
       <div className="screen">
         {isDesktop && (
@@ -96,8 +99,12 @@ const Clothing = () => {
 
             <div className="view my-5 hide-scroll  p-3 md:p-0">
               <div className={viewType === "grid" ? "grid-view" : "list-view"}>
-                {products.map((product, i) => (
-                  <ViewCard key={i} product={product} />
+                {products.map((product) => (
+                  <ViewCard
+                    key={product.id}
+                    product={product}
+                    parentPath={path.toLowerCase()}
+                  />
                 ))}
               </div>
             </div>
