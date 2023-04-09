@@ -5,6 +5,7 @@ export interface Filter {
 }
 
 export interface Product {
+  id: number | string;
   product_name: string;
   price: {
     regular: number;
