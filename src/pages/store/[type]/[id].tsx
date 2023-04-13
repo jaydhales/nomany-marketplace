@@ -1,3 +1,4 @@
+import ImageCarousel from "@/components/ProductDetail/ImageCarousel";
 import { Breadcrumbs, toSentenceCase } from "@/components/Utils";
 import { GlobalContext } from "@/contexts/GlobalContext";
 import Head from "next/head";
@@ -18,7 +19,7 @@ const ProductDetail = () => {
           <Breadcrumbs styling="flex gap-3 text-gray-500 font-title mb-4 " />
         )}
         <div className="box flex gap-5">
-          
+          <ImageCarousel />
         </div>
       </div>
     </>
