@@ -8,7 +8,6 @@ import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 
 import { GlobalContext } from "@/contexts/GlobalContext";
-
 // export const getStaticPaths = async () => {};
 
 const Clothing = () => {
