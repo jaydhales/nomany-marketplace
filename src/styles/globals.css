@@ -25,6 +25,10 @@
     @apply text-title-h6 font-title-h6;
   }
 
+  small {
+    @apply text-small font-small;
+  }
+
   input,
   textarea,
   select,

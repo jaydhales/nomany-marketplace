@@ -11,7 +11,7 @@ interface Props {
 export const GlobalProvider: FC<Props> = ({ children }) => {
   const [screenWidth, setScreenWidth] = useState<number>(0);
 
-  const isDesktop: boolean = screenWidth >= 768 ? true : false;
+  const isDesktop: boolean = screenWidth >= 900 ? true : false;
   useEffect(() => {
     setScreenWidth(window.innerWidth);
     window.addEventListener("resize", () => {
